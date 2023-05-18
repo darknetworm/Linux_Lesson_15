@@ -1,0 +1,15 @@
+---
+- name: Prepare web server
+  hosts: web
+  become: true
+  vars:
+    nginx_listen_port: 8080
+
+  pre_tasks:
+    - name: Update cache
+      ansible.builtin.apt:
+        update_cache: yes
+        cache_valid_time: 3600
+  roles:
+    - role: install_nginx
+    - role: setup_nginx
