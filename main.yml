@@ -1,4 +1,4 @@
----
+---1
 - name: Prepare web server
   hosts: web
   become: true
