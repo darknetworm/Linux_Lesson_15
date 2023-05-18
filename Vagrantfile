@@ -9,7 +9,6 @@ Vagrant.configure("2") do |config|
 end
     config.vm.define "nginx" do |web|
         web.vm.network "private_network", ip: "192.168.57.150"
-#	web.vm.network "forwarded_port", guest: 80, host: 8080, autocorrect: true
         web.vm.hostname = "nginx"
     end
 end
